@@ -1,5 +1,15 @@
 #ifndef MONTY_H
 #define MONTY_H
+/* macros to enable dprintf */
+#define _POSIX_C_SOURCE  200809L
+#define _GNU_SOURCE
+
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -29,5 +39,25 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 }instruction_t;
+
+/**
+  * struct global_var_s - struct for globally used variables
+  * @file: The monty file being read
+  * @lineNum: The current line number being read
+  * @stack: The stack being used
+  * @line: The current line being read
+  */
+
+typedef struct global_val_s
+{
+	FILE *file;
+	unsigned int lineNum;
+	stack_t *stack;
+	char *line;
+	char isStack;
+} global_var_t;
+
+/* Making the global variables available to every file */
+extern global_var_t gvar;
 
 #endif
