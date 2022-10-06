@@ -24,7 +24,7 @@ typedef struct stack_s
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
-}stack_t;
+} stack_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -38,7 +38,7 @@ typedef struct instruction_s
 {
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
-}instruction_t;
+} instruction_t;
 
 /**
   * struct global_var_s - struct for globally used variables
@@ -46,9 +46,10 @@ typedef struct instruction_s
   * @lineNum: The current line number being read
   * @stack: The stack being used
   * @line: The current line being read
+  * @isStack: is it a stack?
   */
 
-typedef struct global_val_s
+typedef struct global_var_s
 {
 	FILE *file;
 	unsigned int lineNum;
