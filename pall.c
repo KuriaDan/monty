@@ -12,6 +12,6 @@ void pall(stack_t **stack, unsigned int lineNum)
 
 	if (!stack)
 		return;
-	for (item = *stack; ite,; item = item->next)
+	for (item = *stack; item; item = item->next)
 		printf("%d\n", item->n);
 }

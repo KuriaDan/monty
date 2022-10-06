@@ -35,7 +35,7 @@ void openfile(char *name)
 	file = fopen(name, "r");
 	if (file == NULL)
 	{
-		dprintf(STDERROR_FILENO, "Error: can't open file %s\n", name);
+		dprintf(STDERR_FILENO, "Error: can't open file %s\n", name);
 		exit(EXIT_FAILURE);
 	}
 
@@ -75,10 +75,12 @@ void runopcode(char *opcode, unsigned int lineNum)
 		{"pall", pall},
 		{"pop", pop},
 		{"add", add},
-		{"div", divide}
+		{"pint", pint},
+		{"swap", swap},
+		{"nop", nop},
 		{NULL, NULL}
 	};
-	for (i = 0; opcodes[i].opcode, i++)
+	for (i = 0; opcodes[i].opcode; i++)
 	{
 		if (strcmp(opcodes[i].opcode, opcode) == 0)
 		{

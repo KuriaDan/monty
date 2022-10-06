@@ -70,7 +70,7 @@ void checkNum(char *num)
 		i++;
 	for (; num[i]; ++i)
 	{
-		if (!isdigit(num[i]; ++i))
+		if (!isdigit(num[i]))
 		{
 			dprintf(STDERR_FILENO, "L%u: usage: push integer\n", gvar.lineNum);
 			cleanup();
