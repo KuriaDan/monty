@@ -61,4 +61,12 @@ typedef struct global_var_s
 /* Making the global variables available to every file */
 extern global_var_t gvar;
 
+void _printerr(char *c);
+void openfile(char *name);
+void process(void);
+void push(char *num);
+void pall(stack_t **stack, unsigned int lineNum);
+void runopcode(char *opcode, unsigned int lineNum);
+void cleanup(void);
+void checkNum(char *str);
 #endif
