@@ -78,6 +78,10 @@ void runopcode(char *opcode, unsigned int lineNum)
 		{"pint", pint},
 		{"swap", swap},
 		{"nop", nop},
+		{"pchar", pchar},
+		{"rotl", rotl},
+		{"rotr", rotr},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	for (i = 0; opcodes[i].opcode; i++)
